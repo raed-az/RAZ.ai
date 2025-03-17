@@ -296,3 +296,15 @@ function validateAnswer(userAnswer, correctAnswer) {
 function endGame() {
     return `Game Over! Your final score is ${score}/5. Do you want to play again? Type 'yes' to continue or 'no' to exit.`;
 }
+
+
+
+window.addEventListener('resize', () => {
+    if (window.innerHeight < window.outerHeight * 0.7) { 
+      // Keyboard is likely open
+      document.body.classList.add('keyboard-open');
+    } else {
+      // Keyboard is closed
+      document.body.classList.remove('keyboard-open');
+    }
+  });
