@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="png" href="/infinite (1).png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAZ.ai</title>
+</head>
+
+<body>
+    <div class="start">
+        <div class="logo"><img src="infinite (1).png" alt=""></div>
+        <div class="mark">
+            <div class="titl"><h1>RAZ.ai 1.1</h1></div>
+            <div class="des"><p>a small project created by Raed Azouzi of an offline AI that contain +2000 response and quest!</p></div>
+            <div class="but"><a href="#hed">Get started !</a></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuzzyset.js/0.1.1/fuzzyset.min.js"></script>
+    <script src="script.js" defer></script>
+
+
+    <header id="hed">
+        
+        <img src="infinite (1).png" alt="logo">
+        <h1>RAZ.ai</h1>
+        <input type="button" value="" onclick="menu()">
+    </header>
+
+
+    <aside id="as">
+        <div class="lign">
+            <table>
+                <tr>
+                    <td><img src="night-mode.png" alt=""></td>
+                    <td><label for="">Dark mod</label><input type="radio" name="y" id="on" onchange="dark()">on<input
+                            type="radio" name="y" id="off" onchange="dark()">off</td>
+                </tr>
+            </table>
+        </div>
+        <div class="lign">
+            <table>
+                <tr>
+                    <td><img src="world.png" alt=""></td>
+                    <td><label for="">Languge</label><select name="" id="sel">
+                            <option value="">english</option>
+                            <option value="">frensh</option>
+                            <option value="">arabic</option>
+                        </select></td>
+                </tr>
+            </table>
+        </div>
+        <div class="lign">
+            <table>
+                <tr>
+                    <td><img src="settings-cogwheel-button.png" alt=""></td>
+                    <td><a href="#">Settings</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="lign">
+            <p>This chat bot is still ender development</p>
+        </div>
+    </aside>
+
+
+    <section id="se">
+        <div class="chat-border">
+            <div class="title">
+                <img src="infinite (1).png" alt="logo">
+
+            </div>
+            <div class="chat" id="chat">
+
+                <div class="bot">
+                    <div class="botMessege">
+                        <p id="botMessege">Hi &#128075 How can i help you?</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="user-chat">
+                <div id="autocomplited"></div>
+                <input type="text" name="" id="userChat" value="" onkeyup="showSuggestions()">
+                <input type="button" value="" onclick="ADMIN()">
+            </div>
+            <input type="button" value="" id="code" onclick="">
+
+        </div>
+
+
+
+
+
+
+
+    </section>
+   
+    <div class="end">
+        <div class="box">
+            <h1>RAZ.ai 1.1 </h1>
+            <p>This is just an early accece to test !</p><br>
+            <p>this web site created in 15 march 2025</p><br>
+            <p>email:</p><a href="#">azouziraed34@gmail.com</a>
+            <p>insta:</p><a href="https://www.instagram.com/raed__az/">raed__az</a>
+            <p>fcp:</p><a href="#">raed azouzi</a>
+            <p>Tel:</p><a href="#">+216 29446035</a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
