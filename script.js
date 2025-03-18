@@ -100,7 +100,7 @@ async function handleUserMessage(userMessage) {
         }
         audio.play();
         
-        return "Theme changed to DHIA and music started!";
+        return "dhia ya wa7ch!";
     }
     
 
