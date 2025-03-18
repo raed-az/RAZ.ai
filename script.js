@@ -100,9 +100,8 @@ async function handleUserMessage(userMessage) {
         }
         audio.play();
         
-        return "dhia ya wa7ch!";
+        return "Theme changed to DHIA and music started!";
     }
-    
 
     // Check for /time command
     if (userMessage === "/time") {
@@ -123,6 +122,9 @@ async function handleUserMessage(userMessage) {
 
     return "Sorry, I didn't understand that. Can you try again?";
 }
+
+
+
 
 function getCurrentTime() {
     const currentTime = new Date();
