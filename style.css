@@ -1,5 +1,5 @@
 *{padding: 0;margin: 0;}
-body{height: 100vh;position: relative;}
+body{height: 100vh;transition: 1s;position: relative;}
 .start{width: 100%;height: 100%;background: url(bggg.jpg) center no-repeat;background-size: cover;display: flex;align-items: center;justify-content: center;}
 .start .logo{width: 50%;}
 .start .logo img{animation-name: logo;animation-iteration-count: infinite;animation-duration: 10s;}
@@ -85,7 +85,7 @@ section .chat-border{
     height: 35px;
     border-radius: 10px;
     border: none;
-    background-color: gray;
+    background-color: gray ;
     color: rgb(44, 44, 44);font-weight: bold;padding-left: 5px;
     position: relative;
     
