@@ -84,6 +84,11 @@ async function handleUserMessage(userMessage) {
         return showAdminCommands();
     }
 
+    // Check for /time command
+    if (userMessage === "/time") {
+        return getCurrentTime();
+    }
+
     if (!questionsAndResponses) {
         return "Sorry, there was an error loading the questions.";
     }
@@ -97,6 +102,14 @@ async function handleUserMessage(userMessage) {
     }
 
     return "Sorry, I didn't understand that. Can you try again?";
+}
+
+function getCurrentTime() {
+    const currentTime = new Date();
+    const hours = currentTime.getHours().toString().padStart(2, '0');
+    const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+    const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+    return `The current time is ${hours}:${minutes}:${seconds}.`;
 }
 
 function isMathExpression(input) {
@@ -297,8 +310,6 @@ function endGame() {
     return `Game Over! Your final score is ${score}/5. Do you want to play again? Type 'yes' to continue or 'no' to exit.`;
 }
 
-
-
 window.addEventListener('resize', () => {
     if (window.innerHeight < window.outerHeight * 0.7) { 
       // Keyboard is likely open
@@ -307,4 +318,4 @@ window.addEventListener('resize', () => {
       // Keyboard is closed
       document.body.classList.remove('keyboard-open');
     }
-  });
+});
