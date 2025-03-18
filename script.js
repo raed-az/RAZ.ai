@@ -102,6 +102,27 @@ async function handleUserMessage(userMessage) {
         
         return "Theme changed to DHIA and music started!";
     }
+    if (userMessage === "/ysf") {
+        document.getElementById("hed").style.backgroundColor = "orangered";
+        document.getElementById("toptitl").style.backgroundColor = "orangered";
+        document.getElementById("downchat").style.backgroundColor = "orangered";
+        document.getElementById("se").style.backgroundColor = "black";
+        
+        document.getElementById("chat").style.background = "url(ysf.png) center no-repeat";
+        document.getElementById("chat").style.backgroundSize = "cover";
+        
+        let audio = document.getElementById("ysfAudio");
+        if (!audio) {
+            audio = document.createElement("audio");
+            audio.id = "ysfAudio";
+            audio.src = "ysf.mp3";
+            audio.loop = true;
+            document.body.appendChild(audio);
+        }
+        audio.play();
+        
+        return "RAZhub:tayechy!";
+    }
 
     // Check for /time command
     if (userMessage === "/time") {
