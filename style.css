@@ -3,20 +3,23 @@ body{height: 100vh;transition: 1s;position: relative;}
 .start{width: 100%;height: 100%;background: url(bggg.jpg) center no-repeat;background-size: cover;display: flex;align-items: center;justify-content: center;}
 .start .logo{width: 50%;}
 .start .logo img{animation-name: logo;animation-iteration-count: infinite;animation-duration: 10s;}
-.start a{text-decoration: none; color: rgb(255, 255, 255);background-color: blueviolet;padding: 15px;position: absolute;border-radius: 5px;transform: translate(0,40px);box-shadow: 0 0 15px white;}
+.but{margin-top: 50px;}
+.start a{text-decoration: none; color: rgb(255, 255, 255);background-color: blueviolet;padding: 15px;border-radius: 5px;display: inline-block;margin-left: 7px;}
+#dwn{background-color: white;color: black;}
+.start a:hover{scale: 1.1;}
 .start .mark{width: 50%;}
 .start .des{color: #b3b3b3;}
 .start .titl {color: white;font-size: 40px;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;}
-header{transition: 1s;width: 100%;height: 7%;background-color: rgb(41, 1, 78);display: flex;align-items: center;gap: 5px;}
+header{transition: 1s;width: 100%;height: 7%;background-color: rgb(41, 1, 78);display: flex;align-items: center;gap: 5px;position: relative;}
 aside{transition: 1s;width: 20%;height: 93%;background-color: rgb(255, 255, 255);float: left;display: none;position: absolute;z-index: 3;right: 0;}
 section{transition: 1s;width: 100%;height: 93%;background-color: rgb(153, 153, 153);display: flex;align-items: center;justify-content: center;}
 .end{width: 100%;height: 100%;background:linear-gradient(0,blueviolet,black);display: flex;align-items: center;justify-content: center;}
-.end .box{background: white;filter: opacity(50%);width: 400px;height: 400px;text-align: center;font-size: 20px;padding: 5px;}
+.end .box{background: white;filter: opacity(50%);width: 400px;height: max-content;text-align: center;font-size: 20px;padding: 5px;}
 
 
 header h1{font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;color: white;}
 header img{width: 30px;margin-left: 5px;}
-header input{width: 30px;height: 30px;transform: translate(1200px);background: url(menu\ \(2\).png) center no-repeat;background-size: contain;border: none;cursor: pointer;}
+header input{width: 30px;height: 30px;background: url(menu\ \(2\).png) center no-repeat;background-size: contain;border: none;cursor: pointer;position: absolute;right: 0;margin-right: 10px;}
 
 
 
@@ -135,7 +138,7 @@ aside .lign a{text-transform: none;text-decoration: none;color: black;}
     position: absolute;
     top: -100px;
     left: 0;
-
+    
     width: 690px; 
     background-color: white;
     border: 1px solid #ccc;
@@ -151,18 +154,17 @@ aside .lign a{text-transform: none;text-decoration: none;color: black;}
 
 @media (max-width: 601px) {
 .start{width: 100%;height: 100%;background: url(bggg.jpg) center no-repeat;background-size:auto;}
-.start .logo{width: 50%;height: 30%;top: 0;position: absolute;}
+.start .logo{width: 50%;height: 30%;top: 20px;position: absolute;}
 .start .logo img{animation-name: logo;animation-iteration-count: infinite;animation-duration: 10s;width: 80%;}
-.start a{text-decoration: none; color: rgb(255, 255, 255);background-color: blueviolet;padding: 15px;position: absolute;border-radius: 5px;transform: translate(0,40px);box-shadow: 0 0 15px white;}
+.start a{text-decoration: none; color: rgb(255, 255, 255);background-color: blueviolet;padding: 15px;border-radius: 5px;box-shadow: 0 0 15px white;}
 .start .mark{width: 70%;}
 .start .des{color: #b3b3b3;}
 .start .titl {color: white;font-size: 30px;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;}
-header{transition: 1s;width: 100%;height: 7%;background-color: rgb(41, 1, 78);display: flex;align-items: center;gap: 5px;}
+header{position: relative;;transition: 1s;width: 100%;height: 7%;background-color: rgb(41, 1, 78);display: flex;align-items: center;gap: 5px;}
 aside{transition: 1s;width: 20%;height: 93%;background-color: rgb(255, 255, 255);float: left;display: none;position: absolute;z-index: 3;right: 0;}
 section{transition: 1s;width: 100%;height: 93%;background-color: rgb(153, 153, 153);display: flex;align-items: center;justify-content: center;}
 .end{width: 100%;height: 100%;background:linear-gradient(0,blueviolet,black);display: flex;align-items: center;justify-content: center;}
 .end .box{background: white;filter: opacity(50%);width: 90%;height: 80%;text-align: center;font-size: 15px;padding: 5px;}
-header input{width: 30px;height: 30px;transform: translate(200px);background: url(menu\ \(2\).png) center no-repeat;background-size: contain;border: none;cursor: pointer;}
 section .chat-border{position: initial;width: 90%;height: 70%;}
 .chat-border .title{width: 100%;height: 10%;}
 .chat-border .chat{width: 100%;height: 80%;min-height: 80%;overflow-y: auto;transition: 1s;}
@@ -172,7 +174,7 @@ section .chat-border{position: initial;width: 90%;height: 70%;}
 #code{transform: translate(7px,-35px);}
 aside{width: 80%;}
 aside .lign{ width: 100%;height: 70px;}
-#autocomplited {transform: translate(50px,1400px); }
+#autocomplited {width: 90%; }
 
 
 html, body {
@@ -198,7 +200,9 @@ html, body {
 .start{width: 100%;height: 100%;background: url(bggg.jpg) center no-repeat;background-size:auto;}
 .start .logo{width: 50%;height: 30%;top: 0;position: absolute;}
 .start .logo img{animation-name: logo;animation-iteration-count: infinite;animation-duration: 10s;width: 80%;}
-.start a{text-decoration: none; color: rgb(255, 255, 255);background-color: blueviolet;padding: 15px;position: absolute;border-radius: 5px;transform: translate(0,40px);box-shadow: 0 0 15px white;}
+.start .but{display: flex;align-items: center;justify-content: center;gap: 5px;}
+.start a{text-decoration: none; color: rgb(255, 255, 255);background-color: blueviolet;padding: 15px;border-radius: 5px;box-shadow: 0 0 15px white;}
+
 .start .mark{width: 70%;}
 .start .des{color: #b3b3b3;}
 .start .titl {color: white;font-size: 30px;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;}
