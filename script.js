@@ -83,25 +83,6 @@ async function handleUserMessage(userMessage) {
     if (userMessage === "admin") {
         return showAdminCommands();
     }
-
-    if (userMessage === "/dhia") {
-        document.getElementById("hed").style.backgroundColor = "pink";
-        document.getElementById("toptitl").style.backgroundColor = "pink";
-        document.getElementById("chat").style.background = "url(dhia.png) center no-repeat";
-        document.getElementById("chat").style.backgroundSize = "cover";
-        
-        let audio = document.getElementById("dhiaAudio");
-        if (!audio) {
-            audio = document.createElement("audio");
-            audio.id = "dhiaAudio";
-            audio.src = "dhia.mp3";
-            audio.loop = true;
-            document.body.appendChild(audio);
-        }
-        audio.play();
-        
-        return "Theme changed to DHIA and music started!";
-    }
     if (userMessage === "/ysf") {
         document.getElementById("hed").style.backgroundColor = "orangered";
         document.getElementById("toptitl").style.backgroundColor = "orangered";
@@ -124,6 +105,25 @@ async function handleUserMessage(userMessage) {
         return "RAZhub:tayechy!";
     }
 
+    if (userMessage === "/dhia") {
+        document.getElementById("hed").style.backgroundColor = "pink";
+        document.getElementById("toptitl").style.backgroundColor = "pink";
+        document.getElementById("chat").style.background = "url(dhia.png) center no-repeat";
+        document.getElementById("chat").style.backgroundSize = "cover";
+        
+        let audio = document.getElementById("dhiaAudio");
+        if (!audio) {
+            audio = document.createElement("audio");
+            audio.id = "dhiaAudio";
+            audio.src = "dhia.mp3";
+            audio.loop = true;
+            document.body.appendChild(audio);
+        }
+        audio.play();
+        
+        return "Theme changed to DHIA and music started!";
+    }
+    
     // Check for /time command
     if (userMessage === "/time") {
         return getCurrentTime();
