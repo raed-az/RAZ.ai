@@ -1,3 +1,220 @@
+
+let isLoggedIn = false;
+let globcap = "";
+
+function saveUserMessage(username, message) {
+
+    let userHistory = JSON.parse(localStorage.getItem('userHistory')) || {};
+
+
+    if (!userHistory[username]) {
+        userHistory[username] = [];
+    }
+
+
+    userHistory[username].push(message);
+
+
+    localStorage.setItem('userHistory', JSON.stringify(userHistory));
+}
+
+
+
+const username = localStorage.getItem('loggedInUser'); 
+if (username) {
+    saveUserMessage(username, userMessage);
+}
+
+
+
+function captcha() {
+    chi = "azertyuiop$qsdfghjklmù*wxcvbn!AZERTYUIOP¨£QSDFGHJKLM%µWXCVBN?1234567890&"
+    ch = ""
+    for (let i = 0; i < 5; i++) {
+        ch = ch + chi[Math.trunc(Math.random() * chi.length)];
+    }
+    document.getElementById("out").innerHTML = ch
+    globcap = ch
+    return globcap
+}
+
+function lab(x) {
+    document.getElementById(x).style.transform = "translateY(-32px)"
+}
+
+function labb(x, y) {
+    if (document.getElementById(y).value == "") {
+        document.getElementById(x).style.transform = "translateY(0)"
+    }
+}
+
+function hideShow() {
+    let pw = document.getElementById("pw").type;
+    if (pw == "password") {
+        document.getElementById("pw").type = "text"
+        document.getElementById("hs").style.background = "url(show.png) no-repeat center"
+        document.getElementById("hs").style.backgroundSize = "contain"
+    }
+    if (pw == "text") {
+        document.getElementById("pw").type = "password"
+        document.getElementById("hs").style.background = "url(hide.png) no-repeat center"
+        document.getElementById("hs").style.backgroundSize = "contain"
+    }
+}
+
+function rhideShow() {
+    let pw = document.getElementById("rpw").type;
+    if (pw == "password") {
+        document.getElementById("rpw").type = "text"
+        document.getElementById("rhs").style.background = "url(show.png) no-repeat center"
+        document.getElementById("rhs").style.backgroundSize = "contain"
+    }
+    if (pw == "text") {
+        document.getElementById("rpw").type = "password"
+        document.getElementById("rhs").style.background = "url(hide.png) no-repeat center"
+        document.getElementById("rhs").style.backgroundSize = "contain"
+    }
+}
+
+let show = "yes"
+function trasl() {
+    let log = document.getElementById("fl")
+    let reg = document.getElementById("fs")
+    
+    if (show == "yes") {
+        log.style.animationName = "top"
+        reg.style.animationName = "down"
+        document.getElementById("fbtn").value = "LogIn"
+        show = "no"
+        log.style.zIndex = "1"
+        reg.style.zIndex = "0"
+        return false
+    }
+    if (show == "no") {
+        log.style.animationName = "down"
+        reg.style.animationName = "top"
+        document.getElementById("fbtn").value = "SignIn"
+        show = "yes"
+        log.style.zIndex = "0"
+        reg.style.zIndex = "1"
+        return false
+    }
+}
+
+function verifLog() {
+    let mail = document.getElementById("mail").value;
+    let pw = document.getElementById("pw").value;
+
+    if (mail == "" || pw == "") {
+        alert("Please fill all fields.");
+        return false;
+    }
+
+
+    const storedUser = JSON.parse(localStorage.getItem(mail));
+
+    if (!storedUser || storedUser.pw !== pw) {
+        alert("Invalid login credentials.");
+        return false;
+    }
+
+    isLoggedIn = true;
+
+
+    document.getElementById("loginsec").style.display = "none"; 
+    document.getElementById("profile").style.display = "block"; 
+
+
+
+
+    document.getElementById("hed").scrollIntoView({ behavior: 'smooth' });
+    return true;
+}
+document.addEventListener("DOMContentLoaded", function () {
+
+    const userData = localStorage.getItem("loggedUser");
+
+    if (userData) {
+        const user = JSON.parse(userData);
+        
+
+        if (document.getElementById("pn")) document.getElementById("pn").textContent = user.name;
+        if (document.getElementById("pe")) document.getElementById("pe").textContent = user.email;
+        if (document.getElementById("pp")) document.getElementById("pp").textContent = user.password;
+    } else {
+        console.log("No user is logged in.");
+    }
+});
+
+document.getElementById("logout").addEventListener("click", function () {
+    localStorage.removeItem("loggedUser"); 
+    window.location.href = "index.html"; 
+});
+
+
+function verifSig() {
+    let name = document.getElementById("rname").value;
+    let mail = document.getElementById("rmail").value;
+    let pw = document.getElementById("rpw").value;
+    let cpw = document.getElementById("cpw").value;
+    let cap = document.getElementById("vcap").value;
+
+    // Registration validations
+    if (name == "") {
+        alert("fill name case")
+        return false
+    }
+    if (mail == "") {
+        alert("fill mail case")
+        return false
+    }
+    if (pw == "") {
+        alert("fill password case")
+        return false
+    }
+    if (cpw != pw) {
+        alert("incorrect password")
+        return false;
+    }
+    if (cap == "") {
+        alert("fill Captcha")
+        return false
+    }
+    if (cap != globcap) {
+        alert("false Captcha")
+        return false
+    }
+
+    // Save registration data in localStorage
+    const userData = { name, mail, pw };
+    localStorage.setItem(mail, JSON.stringify(userData));
+
+    isLoggedIn = true;
+    alert("Registration successful! Please login now.");
+    trasl(); // Switch to login form after registration.
+    return false;
+    
+}
+
+function alpha(ch) {
+    i = 0
+    ch = ch.toUpperCase()
+    while (ch[i] <= "Z" && ch[i] >= "A" || ch[i] == " " && i <= ch.length) {
+        i++
+    }
+    return i == ch.length
+}
+
+function alphanum(ch) {
+    i = 0
+    ch = ch.toUpperCase()
+    while (ch[i] <= "Z" && ch[i] >= "A" || ch[i] <= "9" && ch[i] >= "0" && i <= ch.length) {
+        i++
+    }
+    return i == ch.length
+}
+
+// Chat Bot Functions
 let questionsAndResponses = {};
 
 async function loadQuestionsAndResponses() {
@@ -60,12 +277,17 @@ function autoCorrectInput(input, corrections) {
         correctedInput = corrections[correctedInput];
     }
 
-    correctedInput = correctedInput.replace(/[^a-z0-9\s\+\-\*\/\(\)\.]/g, ''); 
+    correctedInput = correctedInput.replace(/[^a-z0-9\s\+\-\*\/\(\)\.]/g, '');
 
     return correctedInput;
 }
 
 async function handleUserMessage(userMessage) {
+    if (!isLoggedIn) {
+        showLoginAlert();
+        return "";
+    }
+
     const corrections = await loadAutoCorrections();
     if (!corrections) {
         return "Sorry, I couldn't load the auto-corrections.";
@@ -82,6 +304,25 @@ async function handleUserMessage(userMessage) {
 
     if (userMessage === "admin") {
         return showAdminCommands();
+    }
+
+    if (userMessage === "/dhia") {
+        document.getElementById("hed").style.backgroundColor = "pink";
+        document.getElementById("toptitl").style.backgroundColor = "pink";
+        document.getElementById("chat").style.background = "url(dhia.png) center no-repeat";
+        document.getElementById("chat").style.backgroundSize = "cover";
+        
+        let audio = document.getElementById("dhiaAudio");
+        if (!audio) {
+            audio = document.createElement("audio");
+            audio.id = "dhiaAudio";
+            audio.src = "dhia.mp3";
+            audio.loop = true;
+            document.body.appendChild(audio);
+        }
+        audio.play();
+        
+        return "Theme changed to DHIA and music started!";
     }
     if (userMessage === "/ysf") {
         document.getElementById("hed").style.backgroundColor = "orangered";
@@ -105,26 +346,6 @@ async function handleUserMessage(userMessage) {
         return "RAZhub:tayechy!";
     }
 
-    if (userMessage === "/dhia") {
-        document.getElementById("hed").style.backgroundColor = "pink";
-        document.getElementById("toptitl").style.backgroundColor = "pink";
-        document.getElementById("chat").style.background = "url(dhia.png) center no-repeat";
-        document.getElementById("chat").style.backgroundSize = "cover";
-        
-        let audio = document.getElementById("dhiaAudio");
-        if (!audio) {
-            audio = document.createElement("audio");
-            audio.id = "dhiaAudio";
-            audio.src = "dhia.mp3";
-            audio.loop = true;
-            document.body.appendChild(audio);
-        }
-        audio.play();
-        
-        return "Theme changed to DHIA and music started!";
-    }
-    
-    // Check for /time command
     if (userMessage === "/time") {
         return getCurrentTime();
     }
@@ -144,8 +365,11 @@ async function handleUserMessage(userMessage) {
     return "Sorry, I didn't understand that. Can you try again?";
 }
 
-
-
+function showLoginAlert() {
+    if (confirm("You need to login first. Would you like to go to the login section now?")) {
+        document.getElementById("loginsec").scrollIntoView({ behavior: 'smooth' });
+    }
+}
 
 function getCurrentTime() {
     const currentTime = new Date();
@@ -171,10 +395,10 @@ function calculateMathExpression(expression) {
 
 function showAdminCommands() {
     return `Here are the commands you can use:
-    1. **background color** - Change the background color. Example: "background color blue".
-    2. **text size** - Adjust the text size. Example: "text size 16".
-    3. **credits** - Show credits for the bot creator.
-    4. **help** - Get assistance on using the bot.`;
+    1. background color - Change the background color. Example: "background color blue".
+    2. text size - Adjust the text size. Example: "text size 16".
+    3. credits - Show credits for the bot creator.
+    4. help - Get assistance on using the bot.`;
 }
 
 function executeAdminCommand(command) {
@@ -231,18 +455,22 @@ async function addDiv() {
     setTimeout(async () => {
         let botResponse = await handleUserMessage(userText);
 
-        let responseIndex = 0;
-        botDiv.innerHTML = `<div id="botMessege"><p></p></div>`;
+        if (botResponse) { // Only show response if not empty (when not logged in)
+            let responseIndex = 0;
+            botDiv.innerHTML = `<div id="botMessege"><p></p></div>`;
 
-        const typingInterval = setInterval(() => {
-            const messageElement = botDiv.querySelector("p");
-            messageElement.innerHTML += botResponse.charAt(responseIndex);
-            responseIndex++;
+            const typingInterval = setInterval(() => {
+                const messageElement = botDiv.querySelector("p");
+                messageElement.innerHTML += botResponse.charAt(responseIndex);
+                responseIndex++;
 
-            if (responseIndex === botResponse.length) {
-                clearInterval(typingInterval);
-            }
-        }, 100);
+                if (responseIndex === botResponse.length) {
+                    clearInterval(typingInterval);
+                }
+            }, 100);
+        } else {
+            botDiv.remove(); // Remove the typing indicator if not logged in
+        }
 
         document.getElementById("chat").scrollTop = document.getElementById("chat").scrollHeight;
     }, 2000);
@@ -287,7 +515,10 @@ document.getElementById("userChat").addEventListener("input", function() {
     showSuggestions();
 });
 
-window.onload = loadQuestionsAndResponses;
+window.onload = function() {
+    loadQuestionsAndResponses();
+    captcha(); // Initialize captcha on load
+};
 
 function findBestMatch(userMessage) {
     let highestMatch = 0;
@@ -320,7 +551,11 @@ let currentQuestionIndex = 0;
 let gameQuestions = [];
 
 function startGame() {
-    // Change the theme to green
+    if (!isLoggedIn) {
+        showLoginAlert();
+        return "";
+    }
+    
     document.body.style.backgroundColor = "green";
     score = 0;
     currentQuestionIndex = 0;
@@ -355,10 +590,8 @@ function endGame() {
 
 window.addEventListener('resize', () => {
     if (window.innerHeight < window.outerHeight * 0.7) { 
-      // Keyboard is likely open
-      document.body.classList.add('keyboard-open');
+        document.body.classList.add('keyboard-open');
     } else {
-      // Keyboard is closed
-      document.body.classList.remove('keyboard-open');
+        document.body.classList.remove('keyboard-open');
     }
 });

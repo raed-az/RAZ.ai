@@ -24,7 +24,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fuzzyset.js/0.1.1/fuzzyset.min.js"></script>
     <script src="script.js" defer></script>
 
-
+    
     <header id="hed">
         
         <img src="infinite (1).png" alt="logo">
@@ -37,9 +37,25 @@
         <div class="lign">
             <table>
                 <tr>
+                    <td><img src="profile-user.png" alt=""></td>
+                    <td><label for="">profile  : </label><a href="">go</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="lign">
+            <table>
+                <tr>
                     <td><img src="night-mode.png" alt=""></td>
                     <td><label for="">Dark mod</label><input type="radio" name="y" id="on" onchange="dark()">on<input
                             type="radio" name="y" id="off" onchange="dark()">off</td>
+                </tr>
+            </table>
+        </div>
+        <div class="lign">
+            <table>
+                <tr>
+                    <td><img src="history.png" alt=""></td>
+                    <td><button onclick="window.location.href='historique.html'">History</button></td>
                 </tr>
             </table>
         </div>
@@ -64,9 +80,10 @@
             </table>
         </div>
         <div class="lign">
-            <p>This chat bot is still ender development</p>
+            <button id="logout">Logout</button>
         </div>
     </aside>
+        
 
 
     <section id="se">
@@ -101,6 +118,93 @@
 
 
     </section>
+    <div class="loginsec" id="loginsec">
+        <section id="sec">
+            <form method="post" action="php.php" id="fs">
+                <div class="title">
+                    <h1>SignIn</h1>
+                </div>
+                <div class="name">
+                    <label for="rname" id="rlabn"> User Name </label>
+                    <input type="text" name="rname" id="rname" onfocus="lab('rlabn')" onblur="labb('rlabn','rname')" value="">
+                </div>
+                <div class="mail">
+                    <label for="mail" id="rlabm">Email</label>
+                    <input type="email" name="rmail" id="rmail" onfocus="lab('rlabm')" onblur="labb('rlabm','rmail')" value="" required>
+                </div>
+                <div class="pw">
+                    <label for="rpw" id="rlabe">Password</label>
+                    <input type="password" name="rpw" id="rpw" onfocus="lab('rlabe')" onblur="labb('rlabe','rpw')" value="" maxlength="20">
+                    <input type="button" value="" id="rhs" onclick="rhideShow()">
+                </div>
+                <div class="cpw">
+                    <label for="cpw" id="clabe">Confirme Password</label>
+                    <input type="password" name="" id="cpw" onfocus="lab('clabe')" onblur="labb('clabe','cpw')" value="" maxlength="20">
+                    
+                </div>
+                <div class="reg">
+                    <h2>Captcha</h2><output id="out"></output><input type="text" name="" id="vcap">
+                </div>
+                <div class="btn">
+                    <input type="reset" value="Cancel" id="bt1">
+                    <input type="button" value="Sign In" id="bt2" onclick="verifSig()" >
+                </div>
+    
+            </form>
+            
+            <form action="" id="fl">
+                <div class="title">
+                    <h1>LogIn</h1>
+                </div>
+                <div class="name">
+                    <label for="name" id="labn"> User Name </label>
+                    <input type="text" name="" id="name" onfocus="lab('labn')" onblur="labb('labn','name')" value="" maxlength="15">
+                </div>
+                <div class="mail">
+                    <label for="mail" id="labm">Email</label>
+                    <input type="email" name="" id="mail" onfocus="lab('labm')" onblur="labb('labm','mail')" value="">
+                </div>
+                <div class="pw">
+                    <label for="pw" id="labe">Password</label>
+                    <input type="password" name="" id="pw" onfocus="lab('labe')" onblur="labb('labe','pw')" value="" maxlength="20">
+                    <input type="button" value="" id="hs" onclick="hideShow()">
+                </div>
+                <div class="reg">
+                    <p>forgot your password?</p><a href="" >get password</a>
+                </div>
+                <div class="btn">
+                    <input type="reset" value="Cancel" id="bt1">
+                    <input type="button" value="Log In" id="bt2" onclick="verifLog()">
+                </div>
+    
+            </form>
+        </section>
+        <footer id="fot">
+            <input type="button" value="SignIn" onclick="trasl()" id="fbtn">
+            
+        </footer>
+    </div>
+    <div class="profile" id="profile">
+        <div class="iden">
+            <div class="pdp"><img src="profile-user.png" alt=""></div>
+            <div class="info">
+                <table>
+                    <tr>
+                        <td><label for="">Name</label></td>
+                        <td><p id="pn">loading...</p></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Email</label></td>
+                        <td><p id="pe">loading...</p></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">password</label></td>
+                        <td><p id="pp">loading...</p></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
    
     <div class="end">
         <div class="box">

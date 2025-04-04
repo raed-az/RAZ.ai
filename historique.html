@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Historique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+        }
+        .message {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Historique des Questions</h1>
+    <div id="historyContainer"></div>
+
+    <script>
+        const username = localStorage.getItem('loggedInUser');
+        const key = `chatHistory_${username}`;
+        const history = JSON.parse(localStorage.getItem(key)) || [];
+
+        const container = document.getElementById('historyContainer');
+
+        if (history.length === 0) {
+            container.innerHTML = '<p>Aucune question trouvée.</p>';
+        } else {
+            history.forEach((entry, index) => {
+                const div = document.createElement('div');
+                div.className = 'message';
+                div.innerHTML = `<strong>Question ${index + 1}:</strong> ${entry.message}<br><small>${new Date(entry.timestamp).toLocaleString()}</small>`;
+                container.appendChild(div);
+            });
+        }
+        function getUserHistory(username) {
+            let userHistory = JSON.parse(localStorage.getItem('userHistory')) || {};
+            
+            if (userHistory[username] && userHistory[username].length > 0) {
+                return userHistory[username];
+            } else {
+                return ["Aucune question trouvée"];
+            }
+        }
+        function displayUserHistory(username) {
+            let historyMessages = getUserHistory(username);
+            let historyContainer = document.getElementById('historyContainer');
+            historyContainer.innerHTML = ''; // Clear current history
+        
+            historyMessages.forEach(msg => {
+                let msgElement = document.createElement('div');
+                msgElement.classList.add('history-message');
+                msgElement.innerText = msg;
+                historyContainer.appendChild(msgElement);
+            });
+        }
+        
+    </script>
+</body>
+</html>
