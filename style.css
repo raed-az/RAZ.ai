@@ -165,7 +165,7 @@ form{background-color: white;width: 500px;height: 500px;position: absolute;}
 #fl{z-index: 0;}
 #fs{z-index: 1;}
 .loginsec .title{width: 500px;height: 100px;display: flex;justify-content: center;align-items: center;}
-.loginsec .title h1{font-size: 40px;color: rgb(18, 23, 54);}
+.loginsec .title h1{font-size: 40px;color:blueviolet;}
 .loginsec .name{width: 500px;height: 80px;position: relative;display: flex;justify-content: center;align-items: center;}
 .loginsec .mail{width: 500px;height: 80px;position: relative;display: flex;justify-content: center;align-items: center;}
 .loginsec .pw{width: 500px;height: 80px;position: relative;display: flex;justify-content: center;align-items: center;}
@@ -237,24 +237,6 @@ form{background-color: white;width: 500px;height: 500px;position: absolute;}
     animation-duration: 2s;
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 601px) {
 .start{width: 100%;height: 100%;background: url(bggg.jpg) center no-repeat;background-size:auto;}
 .start .logo{width: 50%;height: 30%;top: 20px;position: absolute;}
@@ -281,7 +263,7 @@ aside .lign{ width: 100%;height: 70px;}
 
 
 html, body {
-  height: 100vh; /* Fix the height of the viewport */
+  height: 100vh; 
   overflow: hidden; /* Disable scrolling */
   position: fixed; /* Prevent scrolling when keyboard appears */
   width: 100%; /* Ensure the body takes full width */
@@ -299,6 +281,25 @@ html, body {
   }
     
 }
+
+form{background-color: white;width: 90%;height: 70%;position: absolute;}
+#fl{z-index: 0;}
+#fs{z-index: 1;}
+.loginsec .title{width: 100%;height: 100px;display: flex;justify-content: center;align-items: center;}
+.loginsec .title h1{font-size: 40px;color: rgb(18, 23, 54);}
+.loginsec .name{width: 90%;height: 70px;margin: 0 auto;}
+.loginsec .mail{width: 90%;height: 70px;margin: 0 auto;}
+.loginsec .pw{width: 90%;height: 70px;margin: 0 auto;}
+.loginsec .cpw{width: 90%;height: 70px;margin: 0 auto;}
+.loginsec .reg{width: 90%;height: 70px;margin: 0 auto;}
+.loginsec .btn{width: 90%;height: 70px;margin: 0 auto;}
+
+.profile{height: 100%;width: 100%; display: none;background:linear-gradient(0,black,blueviolet) ;padding-top: 10%;}
+.iden{width: 90%;height: 30%;background-color: white;display: flex;justify-content: center;align-items: center;margin: 0 auto;}
+
+
+
+
 @media (min-width: px) {
 .start{width: 100%;height: 100%;background: url(bggg.jpg) center no-repeat;background-size:auto;}
 .start .logo{width: 50%;height: 30%;top: 0;position: absolute;}
@@ -334,9 +335,5 @@ aside .lign{ width: 100%;height: 70px;}
 
 .keyboard-open {
     overflow: auto !important; /* Allow scrolling */
-  }
-
-
-
-
+}
 
