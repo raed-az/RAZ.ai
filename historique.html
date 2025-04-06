@@ -36,28 +36,6 @@
                 container.appendChild(div);
             });
         }
-        function getUserHistory(username) {
-            let userHistory = JSON.parse(localStorage.getItem('userHistory')) || {};
-            
-            if (userHistory[username] && userHistory[username].length > 0) {
-                return userHistory[username];
-            } else {
-                return ["Aucune question trouvée"];
-            }
-        }
-        function displayUserHistory(username) {
-            let historyMessages = getUserHistory(username);
-            let historyContainer = document.getElementById('historyContainer');
-            historyContainer.innerHTML = ''; // Clear current history
-        
-            historyMessages.forEach(msg => {
-                let msgElement = document.createElement('div');
-                msgElement.classList.add('history-message');
-                msgElement.innerText = msg;
-                historyContainer.appendChild(msgElement);
-            });
-        }
-        
     </script>
 </body>
 </html>

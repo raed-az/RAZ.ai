@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    body {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
+    .review-card {
+      min-width: 300px;
+      max-width: 300px;
+      height: 80%;
+      background: #1b2a33;
+      padding: 20px;
+      border-radius: 16px;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(0, 223, 196, 0.2);
+      display: inline-block;
+      vertical-align: top;
+      overflow: hidden;
+      word-wrap: break-word; /* Ensures text wraps within the card */
+      overflow-wrap: break-word; /* Break long words onto the next line */
+      white-space: normal; /* Ensures the text doesn't overflow */
+    }
+
+    .review-card h3 {
+      color: #00dfc4;
+      margin-bottom: 8px;
+    }
+
+    .review-card p {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="review-card">
+    <h3>Aya B.</h3>
+    <p>"RAZ AI actually understood my messy question and gave a smart answer! Super impressed."</p>
+  </div>
+
+  <div class="review-card">
+    <h3>Yassine K.</h3>
+    <p>"The image explanation feature blew my mind. This is next-level chatbot tech."</p>
+  </div>
+
+  <div class="review-card">
+    <h3>Fatma M.</h3>
+    <p>"Love the dark mode and the user profile system. Feels like a real app!"</p>
+  </div>
+
+  <div class="review-card">
+    <h3>Oussama G.</h3>
+    <p>"This bot feels like magic! Even with typos and messed up questions, it gets me."</p>
+  </div>
+
+  <div class="review-card">
+    <h3>Sarah L.</h3>
+    <p>"Login system + profile pic? This is more than a chatbot — it's a platform!"</p>
+  </div>
+</body>
+</html>

@@ -3,93 +3,164 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="png" href="/infinite (1).png">
+    <link rel="icon" type="png" href="LOGO2.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>RAZ.ai</title>
 </head>
 
 <body>
+    <header id="hed">
+        
+        <img src="LOGO2.png" alt="logo">
+        <h1>RAZ.ai</h1>
+        <input type="button" value="" onclick="menu()">
+        <aside id="as">
+            <div class="lign">
+                <table>
+                    <tr>
+                        <td><img src="profile-user.png" alt=""></td>
+                        <td><a href="#profile">profile </a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="lign">
+                <table>
+                    <tr>
+                        <td><img src="chat.png" alt=""></td>
+                        <td><a href="#se">chat </a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="lign">
+                <table>
+                    <tr>
+                        <td><img src="info.png" alt=""></td>
+                        <td><a href="#infoo">info </a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="lign">
+                <table>
+                    <tr>
+                        <td><img src="customer-service.png" alt=""></td>
+                        <td><a href="#cont">contact </a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="lign">
+                <table>
+                    <tr>
+                        <td><img src="star.png" alt=""></td>
+                        <td><a href="#rate">rate </a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="lign">
+                <table>
+                    <tr>
+                        <td><img src="night-mode.png" alt=""></td>
+                        <td><label for="">Dark mod</label><input type="radio" name="y" id="on" onchange="dark()">on<input type="radio" name="y" id="off" onchange="dark()">off</td>
+                        
+                    </tr>
+                </table>
+            </div>
+            <div class="lign">
+                <table>
+                    <tr>
+                        <td><img src="history.png" alt=""></td>
+                        <td><button onclick="window.location.href='historique.html'">History</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="lign">
+                <table>
+                    <tr>
+                        <td><img src="world.png" alt=""></td>
+                        <td><label for="">Languge(coming soon)</label><select name="" id="sel">
+                                <option value="">english</option>
+                                <option value="">frensh</option>
+                                <option value="">arabic</option>
+                            </select></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="lign">
+                <button id="logout">Logout</button>
+            </div>
+        </aside>
+    </header>
     <div class="start">
-        <div class="logo"><img src="infinite (1).png" alt=""></div>
+        <div class="logo"><img src="LOGO2.png" alt=""></div>
         <div class="mark">
-            <div class="titl"><h1>RAZ.ai 1.3</h1></div>
+            <div class="titl"><h1>RAZ.ai 2.0</h1></div>
             <div class="des"><p>a small project created by Raed Azouzi of an offline AI that contain +3000 response and quest!</p></div>
             <div class="but">
-                <a href="#hed">Get started !</a>
-                <a id="dwn" href="https://www.mediafire.com/file/ir3i3fx3blawjlq/RAZ_ai_%25281%2529_%25281%2529.apk/file">Download 1.2</a></div>
+                <a href="#se">Get started !</a>
+                <a id="dwn" href="https://www.mediafire.com/file/rvmctqzl1nfkrc1/RAZ_ai_%25283%2529.apk/file">Download 2.0</a></div>
             
         </div>
     </div>
+    <div id="ses">
+            <div class="project-container" id="infoo" >
+
+                <section class="project-part part-one">
+                  <div class="content">
+                    <h1>🧠 RAZ AI Chatbot Project – Smart, Secure & Scalable</h1>
+                    <p><strong>RAZ AI</strong> is an intelligent, customizable chatbot solution designed for modern web environments. Built from the ground up without relying on GPT or external AI APIs, RAZ AI leverages a smart pattern-recognition system, fuzzy matching logic, and integrated web features to create a fully interactive and evolving user experience.</p>
+              
+                    <h2>🔧 Key Features</h2>
+                    <ul>
+                      <li><strong>Custom JSON Knowledge Base:</strong> All answers are pulled from a self-managed JSON file for full control.</li>
+                      <li><strong>Advanced Question Recognition:</strong> Letter-by-letter fuzzy matching handles typos and word rearrangements.</li>
+                      <li><strong>Web Search Fallback:</strong> Searches online if no answer is found in the local dataset.</li>
+                      <li><strong>Image Recognition:</strong> Users can send images; the bot explains them with AI.</li>
+                      <li><strong>Secure Access:</strong> Login/register system with CAPTCHA protection.</li>
+                    </ul>
+                  </div>
+                </section>
+              
+
+                <section class="project-part part-two">
+                  <div class="content">
+                    <ul>
+                      <li><strong>User Profiles:</strong> Includes profile pictures and personal settings.</li>
+                      <li><strong>Dark Mode:</strong> Smooth theme toggle for better UX.</li>
+                      <li><strong>Auto-Correction & Math:</strong> Handles minor typos and evaluates expressions.</li>
+                      <li><strong>Review System:</strong> Fake reviews module for social proof simulation.</li>
+                      <li><strong>UI Polish:</strong> Clean layout, scroll animations, and responsive design.</li>
+                    </ul>
+              
+                    <h2>🔄 Version Highlights</h2>
+                    <ul>
+                      <li><strong>RAZ 1.0:</strong> Basic Q&A Chatbot</li>
+                      <li><strong>RAZ 1.1:</strong> Fuzzy Matching Introduced</li>
+                      <li><strong>RAZ 1.2:</strong> Letter Comparison & Word Reordering</li>
+                      <li><strong>RAZ 1.3:</strong> Image Button + AI Explanation</li>
+                      <li><strong>RAZ 2.0:</strong> Login/Register, Web Search, Dark Mode, Profile System</li>
+                    </ul>
+              
+                    <h2>💻 Technologies Used</h2>
+                    <ul>
+                      <li>HTML5, CSS3, JavaScript (Vanilla)</li>
+                      <li>JSON (knowledge base)</li>
+                      <li>Font Awesome, Google Fonts</li>
+                      <li>CAPTCHA integration</li>
+                      <li>Fully responsive design</li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              
+    </div>     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fuzzyset.js/0.1.1/fuzzyset.min.js"></script>
     <script src="script.js" defer></script>
-
-    
-    <header id="hed">
-        
-        <img src="infinite (1).png" alt="logo">
-        <h1>RAZ.ai</h1>
-        <input type="button" value="" onclick="menu()">
-    </header>
-
-
-    <aside id="as">
-        <div class="lign">
-            <table>
-                <tr>
-                    <td><img src="profile-user.png" alt=""></td>
-                    <td><label for="">profile  : </label><a href="#profile">go</a></td>
-                </tr>
-            </table>
-        </div>
-        <div class="lign">
-            <table>
-                <tr>
-                    <td><img src="night-mode.png" alt=""></td>
-                    <td><label for="">Dark mod</label><input type="radio" name="y" id="on" onchange="dark()">on<input
-                            type="radio" name="y" id="off" onchange="dark()">off</td>
-                </tr>
-            </table>
-        </div>
-        <div class="lign">
-            <table>
-                <tr>
-                    <td><img src="history.png" alt=""></td>
-                    <td><button onclick="window.location.href='historique.html'">History</button></td>
-                </tr>
-            </table>
-        </div>
-        <div class="lign">
-            <table>
-                <tr>
-                    <td><img src="world.png" alt=""></td>
-                    <td><label for="">Languge</label><select name="" id="sel">
-                            <option value="">english</option>
-                            <option value="">frensh</option>
-                            <option value="">arabic</option>
-                        </select></td>
-                </tr>
-            </table>
-        </div>
-        <div class="lign">
-            <table>
-                <tr>
-                    <td><img src="settings-cogwheel-button.png" alt=""></td>
-                    <td><a href="#">Settings</a></td>
-                </tr>
-            </table>
-        </div>
-        <div class="lign">
-            <button id="logout">Logout</button>
-        </div>
-    </aside>
-        
 
 
     <section id="se">
         <div class="chat-border">
             <div class="title" id="toptitl">
-                <img src="infinite (1).png" alt="logo">
+                <img src="  LOGO2.png" alt="logo">
 
             </div>
             <div class="chat" id="chat">
@@ -118,6 +189,11 @@
 
 
     </section>
+    <section class="review-section" id="rate">
+        <h2 class="review-title">What People Say About RAZ.ai 🤖</h2>
+        <a href="mailto:raz07ai@gmail.com?subject=Review%20Submission&body=Name:%20%0AReview:%20">Send Review</a>
+        <iframe src="reviews.html" class="review-iframe" scrolling="auto"></iframe>
+      </section>
     <div class="loginsec" id="loginsec">
         <section id="sec">
             <form method="post" action="php.php" id="fs">
@@ -149,7 +225,7 @@
                     <input type="reset" value="Cancel" id="bt1">
                     <input type="button" value="Sign In" id="bt2" onclick="verifSig()" >
                 </div>
-    
+                <input type="button" value="LogIn" onclick="trasl()" id="fbtn">
             </form>
             
             <form action="" id="fl">
@@ -175,31 +251,33 @@
                 <div class="btn">
                     <input type="reset" value="Cancel" id="bt1">
                     <input type="button" value="Log In" id="bt2" onclick="verifLog()">
+                    
                 </div>
-    
+                <input type="button" value="SignIn" onclick="trasl()" id="fbtn">
             </form>
-        </section>
-        <footer id="fot">
-            <input type="button" value="SignIn" onclick="trasl()" id="fbtn">
             
-        </footer>
+        </section>
+        
+            
+            
+        
     </div>
     <div class="profile" id="profile">
         <div class="iden">
-            <div class="pdp"><img src="profile-user.png" alt=""></div>
+            <div class="pdp"><img src="/profile-user (1).png" alt=""></div>
             <div class="info">
                 <table>
                     <tr>
-                        <td><label for="">Name</label></td>
-                        <td><p id="pn">loading...</p></td>
+                        <td><label for="">Name :</label></td>
+                        <td><output id="pn"></output></td>
                     </tr>
                     <tr>
-                        <td><label for="">Email</label></td>
-                        <td><p id="pe">loading...</p></td>
+                        <td><label for="">Email :</label></td>
+                        <td><output id="pe"></output></td>
                     </tr>
                     <tr>
-                        <td><label for="">password</label></td>
-                        <td><p id="pp">loading...</p></td>
+                        <td><label for="">password :</label></td>
+                        <td><output id="pp"></output></td>
                     </tr>
                     <tr><a href="#hed">back to chat</a></tr>
                 </table>
@@ -209,18 +287,33 @@
     
     </div>
    
-    <div class="end">
-        <div class="box">
-            <h1>RAZ.ai 1.2 </h1>
-            <p>This is just an early accece to test !</p><br>
-            <p>this web site created in 15 march 2025</p><br>
-            <p>email:</p><a href="#">azouziraed34@gmail.com</a>
-            <p>insta:</p><a href="https://www.instagram.com/raed__az/">raed__az</a>
-            <p>fcp:</p><a href="#">raed azouzi</a>
-            <p>Tel:</p><a href="#">+216 29446035</a><br>
-            <p>application pour android :</p>
-            <img src="Capture d’écran 2025-03-18 094940.png" alt="">
-        </div>
+    <div class="end" id="cont">
+        <footer class="raz-footer">
+            <div class="footer-wrapper">
+              <!-- Left Side: Contact & Credit -->
+              <div class="footer-section contact-info">
+                <h2>RAZ Bot Changelog</h2>
+                <ul>
+                  <li><strong>RAZ 1.0:</strong> Basic static Q&A engine</li>
+                  <li><strong>RAZ 1.1:</strong> Added fuzzy matching + typo handlingdark mode</li>
+                  <li><strong>RAZ 1.2:</strong> Letter-by-letter comparison + word order flexibility</li>
+                  <li><strong>RAZ 1.3:</strong> Image input feature + AI explanation button</li>
+                  <li><strong>RAZ 2.0:</strong> Full login/register system, web search fallback, profile system, dark mode, new design</li>
+                </ul>
+                </div>
+          
+              
+              <div class="footer-section bot-updates">
+                <h2>Contact Me</h2>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:azouziraed34@gmail.com@gmail.com">azouziraed34@gmail.com</a></p>
+                <p><i class="fab fa-instagram"></i> Instagram: <a href="https://instagram.com/raed_azouzi" target="_blank">@raed__az</a></p>
+                <p><i class="fab fa-facebook"></i> Facebook: <a href="https://www.facebook.com/raed.azouzi.3" target="_blank">raed az</a></p>
+                <p><i class="fas fa-location-dot"></i> Based in Oued Elil,Manouba, Tunisia</p>
+                <p class="credit">© 2025 <strong>RAZ</strong>. Crafted with 💻 by Raed Azouzi.</p>
+              
+              </div>
+            </div>
+          </footer>
     </div>
 
 </body>

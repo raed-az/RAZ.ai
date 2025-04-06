@@ -102,6 +102,7 @@ function trasl() {
 }
 
 function verifLog() {
+    let name=document.getElementById("name").value;
     let mail = document.getElementById("mail").value;
     let pw = document.getElementById("pw").value;
 
@@ -124,27 +125,15 @@ function verifLog() {
     document.getElementById("loginsec").style.display = "none"; 
     document.getElementById("profile").style.display = "block"; 
 
-
+    document.getElementById("pn").innerHTML=name
+    document.getElementById("pe").innerHTML=mail
+    document.getElementById("pp").innerHTML=pw
 
 
     document.getElementById("hed").scrollIntoView({ behavior: 'smooth' });
     return true;
 }
-document.addEventListener("DOMContentLoaded", function () {
 
-    const userData = localStorage.getItem("loggedUser");
-
-    if (userData) {
-        const user = JSON.parse(userData);
-        
-
-        if (document.getElementById("pn")) document.getElementById("pn").textContent = user.name;
-        if (document.getElementById("pe")) document.getElementById("pe").textContent = user.email;
-        if (document.getElementById("pp")) document.getElementById("pp").textContent = user.password;
-    } else {
-        console.log("No user is logged in.");
-    }
-});
 
 document.getElementById("logout").addEventListener("click", function () {
     localStorage.removeItem("loggedUser"); 
@@ -246,13 +235,9 @@ function dark() {
     if (check) {
         document.getElementById("se").style.backgroundColor = "rgb(31, 31, 31)";
         document.getElementById("chat").style.backgroundColor = "black";
-        document.getElementById("as").style.background = "linear-gradient(180deg,black,rgb(41, 1, 78))";
-        document.getElementById("as").style.color = "white";
     } else {
         document.getElementById("se").style.backgroundColor = "rgb(143, 143, 143)";
         document.getElementById("chat").style.backgroundColor = "white";
-        document.getElementById("as").style.background = "linear-gradient(180deg,rgb(255, 255, 255),rgb(41, 1, 78))";
-        document.getElementById("as").style.color = "black";
     }
 }
 
@@ -517,7 +502,7 @@ document.getElementById("userChat").addEventListener("input", function() {
 
 window.onload = function() {
     loadQuestionsAndResponses();
-    captcha(); // Initialize captcha on load
+    captcha();
 };
 
 function findBestMatch(userMessage) {
@@ -588,10 +573,3 @@ function endGame() {
     return `Game Over! Your final score is ${score}/5. Do you want to play again? Type 'yes' to continue or 'no' to exit.`;
 }
 
-window.addEventListener('resize', () => {
-    if (window.innerHeight < window.outerHeight * 0.7) { 
-        document.body.classList.add('keyboard-open');
-    } else {
-        document.body.classList.remove('keyboard-open');
-    }
-});
